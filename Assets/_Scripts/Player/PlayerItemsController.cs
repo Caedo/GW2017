@@ -7,6 +7,8 @@ public class PlayerItemsController : MonoBehaviour {
     public LayerMask m_ItemsMask;
     public float m_PickUpRadius;
 
+    public Transform m_PickUpHolder;
+
     Collider[] m_ItemsInRadius;
 
     Item m_ClosestItem;
@@ -17,6 +19,10 @@ public class PlayerItemsController : MonoBehaviour {
 
         m_ItemsInRadius = Physics.OverlapSphere(transform.position, m_PickUpRadius, m_ItemsMask);
         FindClosesItem();
+
+        if (Input.GetButtonDown("PickUp")) {
+            PickUpItem();
+        }
     }
 
     void FindClosesItem() {
@@ -26,11 +32,22 @@ public class PlayerItemsController : MonoBehaviour {
         foreach (var item in m_ItemsInRadius) {
             float sqrDist = Vector3.SqrMagnitude(transform.position - item.transform.position);
 
-            if(sqrDist < minDst) {
+            if (sqrDist < minDst) {
                 m_ClosestItem = item.GetComponent<Item>();
                 minDst = sqrDist;
             }
         }
+    }
+
+    void PickUpItem() {
+
+        if (m_ClosestItem == null || m_HasItem)
+            return;
+
+        m_ClosestItem.PickUp();
+
+        m_ClosestItem.transform.parent = m_PickUpHolder;
+        m_ClosestItem.transform.position = m_PickUpHolder.position;
     }
 
     private void OnDrawGizmos() {
