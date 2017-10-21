@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class PlayerPanelController : MenuState {
 
@@ -16,5 +17,7 @@ public class PlayerPanelController : MenuState {
         gameSettings.m_Players = playerInfos.Select(i => i.PlayerInfo).ToList();
 
         GameSettings.SelectedGameSettings = gameSettings;
+
+        SceneManager.LoadScene("main");
     }
 }

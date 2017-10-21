@@ -7,6 +7,7 @@ public class MenuStateMachine : MonoBehaviour {
 
     public static MenuStateMachine Instance { get; private set; }
 
+    public bool m_MenuInstance;
     public List<MenuState> m_MenuStates = new List<MenuState>();
 
     Stack<MenuState> m_StateStack = new Stack<MenuState>();
@@ -16,12 +17,16 @@ public class MenuStateMachine : MonoBehaviour {
             Instance = this;
         }
         else {
-            throw new System.Exception("Second MenuStateMachhine");
+            Destroy(gameObject);
         }
     }
 	void Start(){
-		PushState<TitleScreenController>();
+        if (m_MenuInstance)
+            PushState<TitleScreenController>();
+        else
+            PushState<GameUIController>();
 	}
+
     public void PushState<T>() where T : MenuState {
         MenuState state = m_MenuStates.FirstOrDefault(s => s is T);
         state = Instantiate(state, transform, false);
@@ -41,5 +46,9 @@ public class MenuStateMachine : MonoBehaviour {
     void SetStackTopActive(bool active) {
         if(m_StateStack.Count > 0)
             m_StateStack.Peek().gameObject.SetActive(active);
+    }
+
+    private void OnDisable() {
+        Instance = null;
     }
 }

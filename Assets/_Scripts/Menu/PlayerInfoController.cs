@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerInfoController : MonoBehaviour {
 
-	public PlayerInfo PlayerInfo { get; set; }
+    public PlayerInfo PlayerInfo;
 
     public void OnNameEditEnd(string name) {
         PlayerInfo.m_Name = name;
