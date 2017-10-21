@@ -10,5 +10,7 @@ public class PlayerInfo {
 
 public class GameSettings : ScriptableObject {
 
+    public static GameSettings SelectedGameSettings;
+
     public List<PlayerInfo> m_Players;
 }
