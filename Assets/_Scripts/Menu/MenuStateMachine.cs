@@ -9,6 +9,10 @@ public class MenuStateMachine : MonoBehaviour {
 
     Stack<MenuState> m_StateStack = new Stack<MenuState>();
 
+	void Start(){
+		PushState<TitleScreenController> ();
+	}
+
     public void PushState<T>() where T : MenuState {
         MenuState state = m_MenuStates.FirstOrDefault(s => s is T);
         state = Instantiate(state, transform, false);
@@ -16,8 +20,10 @@ public class MenuStateMachine : MonoBehaviour {
         m_StateStack.Push(state);
     }
 
+	[ContextMenu("Pop State")]
     public void PopState() {
         MenuState state = m_StateStack.Pop();
         Destroy(state.gameObject);
     }
 }
+

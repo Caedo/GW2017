@@ -7,4 +7,7 @@ public class TitleScreenController : MenuState {
 	public void QuitGame(){
 		Application.Quit ();
 	}
+	public void PlayGame(){
+		
+	}
 }
