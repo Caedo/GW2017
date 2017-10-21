@@ -20,7 +20,7 @@ public class MenuStateMachine : MonoBehaviour {
         }
     }
 	void Start(){
-		PushState<GameUIController>();
+		PushState<TitleScreenController>();
 	}
     public void PushState<T>() where T : MenuState {
         MenuState state = m_MenuStates.FirstOrDefault(s => s is T);
