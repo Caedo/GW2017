@@ -13,6 +13,10 @@ public class Anchor : MonoBehaviour {
         m_MeshRenderer = GetComponent<MeshRenderer>();
     }
 
+    private void Start() {
+        SetHelperVisibility(false);
+    }
+
     public void SetHelperVisibility(bool visibility) {
         m_MeshRenderer.enabled = visibility;
     }

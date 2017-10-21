@@ -4,6 +4,8 @@ using UnityEngine;
 
 public abstract class Item : MonoBehaviour {
 
+    public bool m_IsPlaceable;
+
     public abstract void Use();
 
 }
