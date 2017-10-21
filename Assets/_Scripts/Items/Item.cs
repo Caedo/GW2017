@@ -12,7 +12,7 @@ public abstract class Item : MonoBehaviour {
     protected virtual void Awake() {
         rigidbody = GetComponent<Rigidbody>();
     }
-
+    public virtual void PlaceBlock(Anchor anchor) { }
     public virtual void PickUp() {
         Debug.Log("LUL");
         rigidbody.useGravity = false;
