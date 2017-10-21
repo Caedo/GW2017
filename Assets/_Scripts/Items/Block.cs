@@ -14,7 +14,7 @@ public class Block : Item {
         transform.parent = anchor.transform;
         transform.position = anchor.transform.position;
 
-        anchor.m_HasBlock = true;
+        anchor.HasBlock = true;
     }
 
     public override void Use() {

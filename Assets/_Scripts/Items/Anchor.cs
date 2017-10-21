@@ -9,9 +9,11 @@ public class Anchor : MonoBehaviour {
 
     private MeshRenderer m_MeshRenderer;
 
-
+    private void Awake() {
+        m_MeshRenderer = GetComponent<MeshRenderer>();
+    }
 
     public void SetHelperVisibility(bool visibility) {
-        //m_HelperObject.SetActive(visibility);
+        m_MeshRenderer.enabled = visibility;
     }
 }
