@@ -424,7 +424,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Player 2
+  m_Text: Gracz 2
 --- !u!114 &114076138648726452
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -645,7 +645,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Nickname
+  m_Text: Nazwa gracza
 --- !u!114 &114173362578334974
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -719,7 +719,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Nickname
+  m_Text: Nazwa gracza
 --- !u!114 &114226669674088250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1085,7 +1085,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: GO!
+  m_Text: Start
 --- !u!114 &114670402909394610
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1178,7 +1178,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Player 1
+  m_Text: Gracz 1
 --- !u!114 &114791686594910514
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1222,7 +1222,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Back
+  m_Text: "Powr\xF3t"
 --- !u!114 &114918742796042588
 MonoBehaviour:
   m_ObjectHideFlags: 1
