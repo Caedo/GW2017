@@ -88,6 +88,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224538890104624668}
   - component: {fileID: 114611710763589412}
+  - component: {fileID: 114044131544207218}
   m_Layer: 5
   m_Name: GamePanel
   m_TagString: Untagged
@@ -145,6 +146,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: '''nazwa gracza'''
+--- !u!114 &114044131544207218
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1851227832990560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84b19ad0a6a2d1d4f9104985376ceba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerLabel: {fileID: 114133206275206564}
 --- !u!114 &114133206275206564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -277,6 +290,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerLabel: {fileID: 114133206275206564}
+  time: 0
+  finish: 0
 --- !u!222 &222013633229580352
 CanvasRenderer:
   m_ObjectHideFlags: 1

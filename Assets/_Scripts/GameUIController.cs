@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Stopwatch : MonoBehaviour {
+public class GameUIController : MenuState {
 
 	public Text timerLabel;
 
-	private float time;
+	public float time;
 	bool finish;
 
+	public void PauseMenu(){
+		MenuStateMachine.Instance.PushState<PauseController> ();
+	}
 	void Update() {
 		if (!finish) {
-			
+
 			time += Time.deltaTime;
 
 			var minutes = time / 60; //Divide the guiTime by sixty to get the minutes.
@@ -22,5 +25,10 @@ public class Stopwatch : MonoBehaviour {
 			//update the label value
 			timerLabel.text = string.Format ("{0:00} : {1:00}", minutes, seconds);
 		}
+		//else
+		if (Input.GetButton ("Cancel"))
+			PauseMenu ();
+
+			
 	}
 }

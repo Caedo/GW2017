@@ -13,4 +13,7 @@ public class TitleScreenController : MenuState {
 	public void Credits(){
 		MenuStateMachine.Instance.PushState<CreditsController> ();
 	}
+	public void SettingsGame(){
+		MenuStateMachine.Instance.PushState<Settings> ();
+	}
 }
