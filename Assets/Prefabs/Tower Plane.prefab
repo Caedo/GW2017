@@ -535,6 +535,7 @@ GameObject:
   - component: {fileID: 33212087583961998}
   - component: {fileID: 64057081001057530}
   - component: {fileID: 23449305896799110}
+  - component: {fileID: 114247243869673206}
   m_Layer: 0
   m_Name: Tower Plane
   m_TagString: Untagged
@@ -2627,6 +2628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsAvaible: 1
+  player: 0
 --- !u!114 &114145495304983386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2639,6 +2641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsAvaible: 1
+  player: 0
 --- !u!114 &114164628857952608
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2651,6 +2654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsAvaible: 1
+  player: 0
 --- !u!114 &114180454197455418
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2663,6 +2667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsAvaible: 1
+  player: 0
 --- !u!114 &114189227389212056
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2675,6 +2680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsAvaible: 1
+  player: 0
 --- !u!114 &114195958812232798
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2687,6 +2693,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsAvaible: 1
+  player: 0
+--- !u!114 &114247243869673206
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1914412195465156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5257ce5c7dfb1de42a6b0b397452758b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PlayerType: 0
 --- !u!114 &114265981122455944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2699,6 +2718,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsAvaible: 1
+  player: 0
 --- !u!114 &114323614101678716
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2711,6 +2731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsAvaible: 1
+  player: 0
 --- !u!114 &114351115900546682
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2723,6 +2744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsAvaible: 1
+  player: 0
 --- !u!114 &114376589049257500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2735,6 +2757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsAvaible: 1
+  player: 0
 --- !u!114 &114495092539186216
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2747,6 +2770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsAvaible: 1
+  player: 0
 --- !u!114 &114521767643058604
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2759,6 +2783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsAvaible: 1
+  player: 0
 --- !u!114 &114524263975359222
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2771,6 +2796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsAvaible: 1
+  player: 0
 --- !u!114 &114542915724345274
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2783,6 +2809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsAvaible: 1
+  player: 0
 --- !u!114 &114554888048350436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2795,6 +2822,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsAvaible: 1
+  player: 0
 --- !u!114 &114558394799172322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2807,6 +2835,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsAvaible: 1
+  player: 0
 --- !u!114 &114562000740145654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2819,6 +2848,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsAvaible: 1
+  player: 0
 --- !u!114 &114564239067306546
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2831,6 +2861,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsAvaible: 1
+  player: 0
 --- !u!114 &114602451898683430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2843,6 +2874,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsAvaible: 1
+  player: 0
 --- !u!114 &114610052713022442
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2855,6 +2887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsAvaible: 1
+  player: 0
 --- !u!114 &114709293888409660
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2867,6 +2900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsAvaible: 1
+  player: 0
 --- !u!114 &114710275676181746
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2879,6 +2913,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsAvaible: 1
+  player: 0
 --- !u!114 &114755092517518262
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2891,6 +2926,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsAvaible: 1
+  player: 0
 --- !u!114 &114755820126662258
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2903,6 +2939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsAvaible: 1
+  player: 0
 --- !u!114 &114755852435533714
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2915,6 +2952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsAvaible: 1
+  player: 0
 --- !u!114 &114758614631462074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2927,6 +2965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsAvaible: 1
+  player: 0
 --- !u!114 &114759971107233914
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2939,6 +2978,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsAvaible: 1
+  player: 0
 --- !u!114 &114836141682544368
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2951,6 +2991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsAvaible: 1
+  player: 0
 --- !u!114 &114862684871902184
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2963,6 +3004,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsAvaible: 1
+  player: 0
 --- !u!114 &114930571563969480
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2975,3 +3017,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsAvaible: 1
+  player: 0

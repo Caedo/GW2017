@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerItemsController : MonoBehaviour {
 
+    public System.Action<Item> OnItemThrow;
+
     public LayerMask m_ItemsMask;
     public LayerMask m_AnchorMask;
     public float m_PickUpRadius;
@@ -37,10 +39,13 @@ public class PlayerItemsController : MonoBehaviour {
             }
         }
 
-        if (Input.GetButtonDown("PickUp")) {
+        if (Input.GetKeyDown(KeyCode.E)) {
             PickUpItem();
         }
         if (Input.GetKeyDown(KeyCode.F)) {
+            if (OnItemThrow != null)
+                OnItemThrow(m_PickedItem);
+
             ThrowItem();
         }
     }
@@ -88,9 +93,11 @@ public class PlayerItemsController : MonoBehaviour {
     }
 
     void PlaceItem() {
-        m_PickedItem.PlaceBlock(m_ClosestAnchor);
-        m_PickedItem = null;
-        m_ClosestAnchor = null;
+        if (m_HasItem && m_ClosestAnchor != null) {
+            m_PickedItem.PlaceBlock(m_ClosestAnchor);
+            m_PickedItem = null;
+            m_ClosestAnchor = null;
+        }
     }
 
     void ThrowItem() {
@@ -102,15 +109,15 @@ public class PlayerItemsController : MonoBehaviour {
 
     void PickUpItem() {
 
-        if (m_HasItem && m_ClosestItem != null)
-            return;
+        if (!m_HasItem && m_ClosestItem != null) {
 
-        m_ClosestItem.PickUp();
+            m_ClosestItem.PickUp();
 
-        m_ClosestItem.transform.parent = m_PickUpHolder;
-        m_ClosestItem.transform.position = m_PickUpHolder.position;
+            m_ClosestItem.transform.parent = m_PickUpHolder;
+            m_ClosestItem.transform.position = m_PickUpHolder.position;
 
-        m_PickedItem = m_ClosestItem;
+            m_PickedItem = m_ClosestItem;
+        }
     }
 
     private void OnDrawGizmos() {
