@@ -186,8 +186,11 @@ MonoBehaviour:
   m_ItemsMask:
     serializedVersion: 2
     m_Bits: 256
+  m_AnchorMask:
+    serializedVersion: 2
+    m_Bits: 512
   m_PickUpRadius: 3
-  m_ThrowForce: 15
+  m_ThrowForce: 50
   m_PickUpHolder: {fileID: 4921434907804490}
 --- !u!143 &143313840710433278
 CharacterController:
