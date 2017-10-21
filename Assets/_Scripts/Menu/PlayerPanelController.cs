@@ -18,6 +18,6 @@ public class PlayerPanelController : MenuState {
 
         GameSettings.SelectedGameSettings = gameSettings;
 
-        SceneManager.LoadScene("main");
+        SceneManager.LoadScene("Main");
     }
 }
