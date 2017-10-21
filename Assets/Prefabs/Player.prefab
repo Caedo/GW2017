@@ -82,6 +82,8 @@ GameObject:
   - component: {fileID: 143313840710433278}
   - component: {fileID: 114181103845180208}
   - component: {fileID: 114877017808724588}
+  - component: {fileID: 114119551504558656}
+  - component: {fileID: 114845935982646396}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1134,6 +1136,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114119551504558656
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1095667396369534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b09a005756947e244bb60be660bbb816, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114181103845180208
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1151,6 +1164,17 @@ MonoBehaviour:
   airControlPercent: 0.5
   turnSmoothTime: 0.05
   speedSmoothTime: 0.1
+--- !u!114 &114845935982646396
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1095667396369534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f16aa7094816574db0f33c6a08fd83d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114877017808724588
 MonoBehaviour:
   m_ObjectHideFlags: 1
