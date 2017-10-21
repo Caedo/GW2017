@@ -10,4 +10,7 @@ public class TitleScreenController : MenuState {
 	public void PlayGame(){
 		MenuStateMachine.Instance.PushState<PlayerPanelController> ();
 	}
+	public void Credits(){
+		MenuStateMachine.Instance.PushState<CreditsController> ();
+	}
 }
