@@ -7,6 +7,8 @@ public class GameUIController : MenuState {
 
 	public Text timerLabel;
 
+	public static string actualTime;
+
 	public float time;
 	bool finish;
 
@@ -23,7 +25,7 @@ public class GameUIController : MenuState {
 			//var fraction = (time * 100) % 100;
 
 			//update the label value
-			timerLabel.text = string.Format ("{0:00} : {1:00}", minutes, seconds);
+			timerLabel.text = actualTime = string.Format ("{0:00} : {1:00}", minutes, seconds);
 		}
 		//else
 		if (Input.GetButton ("Cancel"))

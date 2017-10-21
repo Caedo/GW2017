@@ -8,9 +8,6 @@ public class WinnerController : MenuState {
 	public Text timerLabel;
 
 	void Start(){
-		GameUIController controller = FindObjectOfType<GameUIController> ();
-		timerLabel.text = controller.timerLabel.text;
+		timerLabel.text = GameUIController.actualTime;
 	}
-
-
 }
