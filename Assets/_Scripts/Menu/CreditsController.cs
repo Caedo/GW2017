@@ -5,6 +5,6 @@ using UnityEngine;
 public class CreditsController : MenuState {
 
 	public void Back(){
-		MenuStateMachine.Instance.PushState<TitleScreenController> ();
+		MenuStateMachine.Instance.PopState ();
 	}
 }

@@ -19,4 +19,7 @@ public class Settings : MenuState {
     {
         PlayerPrefs.SetFloat("SFX", value);
     }
+	public void Back(){
+		MenuStateMachine.Instance.PopState ();
+	}
 }
