@@ -24,6 +24,12 @@ public abstract class Item : MonoBehaviour {
 
     public abstract void Use();
     public virtual void Throw(Vector3 direction, float force) {
+        rigidbody.useGravity = true;
+        rigidbody.isKinematic = false;
+        GetComponent<Collider>().enabled = true;
+
+        transform.parent = null;
+
         rigidbody.AddForce(direction * force, ForceMode.Impulse);
     }
 
