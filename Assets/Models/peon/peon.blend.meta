@@ -42,6 +42,27 @@ ModelImporter:
     100068: upArm_R
     100070: upLeg_L
     100072: upLeg_R
+    100074: Chest
+    100076: Foot_L
+    100078: Foot_R
+    100080: Hand_L
+    100082: Hand_L_001
+    100084: Head
+    100086: Hips
+    100088: Lower_Arm_L
+    100090: Lower_Arm_R
+    100092: Lower_Leg_L
+    100094: Lower_Leg_R
+    100096: Neck
+    100098: Shoulder_L
+    100100: Shoulder_R
+    100102: Spine
+    100104: Toes_L
+    100106: Toes_R
+    100108: Upper_Arm_L
+    100110: Upper_Arm_R
+    100112: Upper_Leg_L
+    100114: Upper_Leg_R
     400000: Armature
     400002: foot_L
     400004: foot_R
@@ -79,6 +100,27 @@ ModelImporter:
     400068: upArm_R
     400070: upLeg_L
     400072: upLeg_R
+    400074: Chest
+    400076: Foot_L
+    400078: Foot_R
+    400080: Hand_L
+    400082: Hand_L_001
+    400084: Head
+    400086: Hips
+    400088: Lower_Arm_L
+    400090: Lower_Arm_R
+    400092: Lower_Leg_L
+    400094: Lower_Leg_R
+    400096: Neck
+    400098: Shoulder_L
+    400100: Shoulder_R
+    400102: Spine
+    400104: Toes_L
+    400106: Toes_R
+    400108: Upper_Arm_L
+    400110: Upper_Arm_R
+    400112: Upper_Leg_L
+    400114: Upper_Leg_R
     2300000: Plane_001
     3300000: Plane_001
     4300000: peon
@@ -88,6 +130,8 @@ ModelImporter:
     7400004: Idle
     7400006: Run
     7400008: Walk
+    7400010: Hold_Object
+    7400012: Throw_Object
     9500000: //RootNode
     13700000: peon
   materials:
@@ -100,8 +144,7 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
-      human bone 'LeftFoot' not found\n"
+    rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
