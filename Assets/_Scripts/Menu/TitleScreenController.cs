@@ -8,6 +8,6 @@ public class TitleScreenController : MenuState {
 		Application.Quit ();
 	}
 	public void PlayGame(){
-		
+		MenuStateMachine.Instance.PushState<PlayerPanelController> ();
 	}
 }

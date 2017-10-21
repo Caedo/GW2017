@@ -19,13 +19,15 @@ public class MenuStateMachine : MonoBehaviour {
             throw new System.Exception("Second MenuStateMachhine");
         }
     }
-
+	void Start(){
+		PushState<TitleScreenController>();
+	}
     public void PushState<T>() where T : MenuState {
         MenuState state = m_MenuStates.FirstOrDefault(s => s is T);
         state = Instantiate(state, transform, false);
 
-        m_StateStack.Peek().gameObject.SetActive(false);
 
+		SetStackTopActive (false);
         m_StateStack.Push(state);
     }
 
