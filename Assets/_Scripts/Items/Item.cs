@@ -9,11 +9,12 @@ public abstract class Item : MonoBehaviour {
 
     protected new Rigidbody rigidbody;
 
-    private void Awake() {
+    protected virtual void Awake() {
         rigidbody = GetComponent<Rigidbody>();
     }
 
     public virtual void PickUp() {
+        Debug.Log("LUL");
         rigidbody.useGravity = false;
         rigidbody.isKinematic = true;
         GetComponent<Collider>().enabled = false;

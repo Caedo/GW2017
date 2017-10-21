@@ -6,6 +6,7 @@ using UnityEngine;
 public class Anchor : MonoBehaviour {
 
     public bool HasBlock { get; set; }
+    public bool m_IsAvaible = true;
 
     private MeshRenderer m_MeshRenderer;
 
