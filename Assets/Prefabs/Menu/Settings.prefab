@@ -396,7 +396,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224719177909982180}
-  - component: {fileID: 114213686081434102}
+  - component: {fileID: 114939741347741304}
   m_Layer: 5
   m_Name: Settings
   m_TagString: Untagged
@@ -500,7 +500,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114213686081434102}
+      - m_Target: {fileID: 0}
         m_MethodName: MusicChange
         m_Mode: 0
         m_Arguments:
@@ -619,7 +619,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114213686081434102}
+      - m_Target: {fileID: 0}
         m_MethodName: SFXChange
         m_Mode: 0
         m_Arguments:
@@ -632,17 +632,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114213686081434102
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1851507552419386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba23c9ecebb05ea4eb320888eec998c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114239079842858524
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -743,7 +732,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114213686081434102}
+      - m_Target: {fileID: 0}
         m_MethodName: VolumeChange
         m_Mode: 0
         m_Arguments:
@@ -882,7 +871,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114213686081434102}
+      - m_Target: {fileID: 114939741347741304}
         m_MethodName: Back
         m_Mode: 1
         m_Arguments:
@@ -1090,6 +1079,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114939741347741304
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1851507552419386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b0e57da4b813714289afa07263a5af6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &222206715561918460
 CanvasRenderer:
   m_ObjectHideFlags: 1
