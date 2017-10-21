@@ -22,12 +22,11 @@ GameObject:
   - component: {fileID: 114302440825757168}
   - component: {fileID: 33973478945459014}
   - component: {fileID: 23093887902470304}
-  - component: {fileID: 114234128214897488}
   - component: {fileID: 65875343594213494}
   m_Layer: 9
   m_Name: Anchor
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -982381405332843317, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -95,18 +94,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.1, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114234128214897488
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1589584247957696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 494d7c557ff4d4149bfef49b728d7f4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IsAvaible: 0
 --- !u!114 &114302440825757168
 MonoBehaviour:
   m_ObjectHideFlags: 1

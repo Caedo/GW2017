@@ -28,8 +28,13 @@ public class PlayerItemsController : MonoBehaviour {
         FindClosesItem();
 
         if (m_HasItem) {
-            if(m_PickedItem.m_IsPlaceable)
+            if (m_PickedItem.m_IsPlaceable) {
                 FindClosestAnchor();
+
+                if (Input.GetKeyDown(KeyCode.E)) {
+                    PlaceItem();
+                }
+            }
         }
 
         if (Input.GetButtonDown("PickUp")) {
@@ -56,7 +61,7 @@ public class PlayerItemsController : MonoBehaviour {
         }
     }
 
-   void FindClosestAnchor() {
+    void FindClosestAnchor() {
         if (m_ClosestAnchor != null) {
             m_ClosestAnchor.SetHelperVisibility(false);
         }
@@ -82,6 +87,12 @@ public class PlayerItemsController : MonoBehaviour {
         }
     }
 
+    void PlaceItem() {
+        m_PickedItem.PlaceBlock(m_ClosestAnchor);
+        m_PickedItem = null;
+        m_ClosestAnchor = null;
+    }
+
     void ThrowItem() {
         if (m_HasItem) {
             m_PickedItem.Throw(transform.forward, m_ThrowForce);
@@ -103,13 +114,13 @@ public class PlayerItemsController : MonoBehaviour {
     }
 
     private void OnDrawGizmos() {
-        if(m_ClosestItem != null) {
+        if (m_ClosestItem != null) {
             Gizmos.color = Color.red;
 
             Gizmos.DrawLine(transform.position, m_ClosestItem.transform.position);
         }
 
-        if(m_ClosestAnchor != null) {
+        if (m_ClosestAnchor != null) {
             Gizmos.color = Color.green;
 
             Gizmos.DrawLine(transform.position, m_ClosestAnchor.transform.position);

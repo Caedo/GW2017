@@ -19,9 +19,10 @@ public class Block : Item {
         SetAnchorsAvaible(true);
     }
 
-    public void PlaceBlock(Anchor anchor) {
+    public override void PlaceBlock(Anchor anchor) {
         transform.parent = anchor.transform;
         transform.position = anchor.transform.position;
+        transform.rotation = anchor.transform.rotation;
 
         anchor.HasBlock = true;
         m_IsPlaced = true;
