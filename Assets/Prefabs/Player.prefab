@@ -1179,7 +1179,7 @@ MonoBehaviour:
     m_Bits: 1280
   runSpeed: 7
   jumpHeight: 6
-  jumpRayLength: 0.2
+  jumpRayLength: 0.05
   airControlPercent: 0.5
   turnSmoothTime: 0.05
   speedSmoothTime: 0.1
@@ -1194,6 +1194,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f16aa7094816574db0f33c6a08fd83d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audio:
+  - {fileID: 8300000, guid: b8d31c6ca3e56404897c0e83c78e68d2, type: 3}
+  - {fileID: 8300000, guid: cabdf993aadc2e94aa8f4beaff3456a6, type: 3}
+  - {fileID: 8300000, guid: 67b433c67bfe65748af664c0fcfc05b4, type: 3}
+  - {fileID: 8300000, guid: ff3408201be3674408cd9e178997de3a, type: 3}
+  - {fileID: 8300000, guid: eda33dc6ca9d4864386a901c33aa4d97, type: 3}
+  m_OtherPlayer: {fileID: 0}
   m_PlayerType: 0
   m_PlayerName: 
   m_PlayerInput:
@@ -1202,6 +1209,8 @@ MonoBehaviour:
     jump: 
     itemThrow: 
     itemUse: 
+  PlayTimeMin: 20
+  PlayTimeMax: 30
 --- !u!114 &114877017808724588
 MonoBehaviour:
   m_ObjectHideFlags: 1
