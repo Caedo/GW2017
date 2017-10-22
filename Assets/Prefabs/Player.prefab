@@ -83,8 +83,8 @@ GameObject:
   - component: {fileID: 114877017808724588}
   - component: {fileID: 114119551504558656}
   - component: {fileID: 114845935982646396}
-  - component: {fileID: 54360781554175254}
-  - component: {fileID: 136262186217907200}
+  - component: {fileID: 54569844464130122}
+  - component: {fileID: 136957004521032602}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1112,7 +1112,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1095667396369534}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.690145, y: 9.413721, z: 11.579264}
+  m_LocalPosition: {x: 31.475397, y: 9.413721, z: 19.881342}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4617757273982834}
@@ -1120,7 +1120,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &54360781554175254
+--- !u!54 &54569844464130122
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1133,7 +1133,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!95 &95445256378959020
 Animator:
@@ -1174,7 +1174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da54243ba24eef40b42042a396a1ae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 6
+  runSpeed: 7
   gravity: -25
   jumpHeight: 2
   jumpRayLength: 0.2
@@ -1226,7 +1226,7 @@ MonoBehaviour:
     jump: 
     itemThrow: 
     itemUse: 
---- !u!136 &136262186217907200
+--- !u!136 &136957004521032602
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1236,9 +1236,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 2.17
+  m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 1.2, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!137 &137899183516143054
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
