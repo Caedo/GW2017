@@ -6,11 +6,17 @@ using UnityEngine.UI;
 public class GameUIController : MenuState {
 
     public Text timerLabel;
+	public Text nick1;
+	public Text nick2;
 
     public static string actualTime;
 
     public float time;
 
+	void Start(){
+		nick1.text = GameSettings.SelectedGameSettings.m_Players [0].m_Name;
+		nick2.text = GameSettings.SelectedGameSettings.m_Players [1].m_Name;
+	}
     public void PauseMenu() {
         MenuStateMachine.Instance.PushState<PauseController>();
     }
