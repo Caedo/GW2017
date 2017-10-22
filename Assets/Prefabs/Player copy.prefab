@@ -1147,9 +1147,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da54243ba24eef40b42042a396a1ae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 6
-  gravity: -25
-  jumpHeight: 2
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 0
+  runSpeed: 7
+  jumpHeight: 6
+  jumpRayLength: 0.2
   airControlPercent: 0.5
   turnSmoothTime: 0.05
   speedSmoothTime: 0.1
@@ -1166,13 +1169,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ItemsMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1280
   m_AnchorMask:
     serializedVersion: 2
     m_Bits: 512
   m_PickUpRadius: 3
+  m_MinPickuUpRadius: 0
   m_ThrowForce: 50
   m_PickUpHolder: {fileID: 4436311726680958}
+  m_PlayerInput:
+    horizontal: 
+    vertical: 
+    jump: 
+    itemThrow: 
+    itemUse: 
 --- !u!114 &114700160852641140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1185,7 +1195,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlayerType: 0
-  m_Name: 
+  m_PlayerName: 
+  m_PlayerInput:
+    horizontal: 
+    vertical: 
+    jump: 
+    itemThrow: 
+    itemUse: 
 --- !u!114 &114767963716278502
 MonoBehaviour:
   m_ObjectHideFlags: 1
