@@ -11,6 +11,7 @@ public enum PlayerType {
 
 public class GameManager : MonoBehaviour {
 
+    public static GameManager Instance { get; private set; }
     public GameSettings m_DefaultGameSettings;
 
     public Player m_PlayerPrefab;
@@ -20,6 +21,14 @@ public class GameManager : MonoBehaviour {
     GameSettings m_GameSettings;
 
     private void Awake() {
+        if (Instance == null) {
+            Instance = this;
+        }
+        else {
+            Destroy(gameObject);
+        }
+
+        GobletController.OnGameEnds += OnGameEnd;
         m_GameSettings = GameSettings.SelectedGameSettings == null ? m_DefaultGameSettings : GameSettings.SelectedGameSettings;
 
         for (int i = 0; i < m_GameSettings.PlayersCount; i++) {
@@ -29,5 +38,13 @@ public class GameManager : MonoBehaviour {
             Player player = Instantiate(m_PlayerPrefab, m_SpawnPoints[i].position, m_SpawnPoints[i].rotation);
             player.Initialize(m_GameSettings.m_Players[i]);
         }
+    }
+
+    void OnGameEnd(Player winner) {
+        Debug.Log("Hueh");
+    }
+
+    private void OnDisable() {
+        Instance = null;
     }
 }
