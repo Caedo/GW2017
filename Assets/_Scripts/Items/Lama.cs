@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lama : MonoBehaviour {
+public class Lama : Item {
+
+    bool m_IsPlaced;
+    bool isUsed = false;
 
     public float runSpeed = 6;
     public float timeToExplode = 5;
@@ -16,30 +19,71 @@ public class Lama : MonoBehaviour {
     private bool isExplosion = false;
     private float remainingTime = 0;
 
+    public override bool CanBePicked
+    {
+        get
+        {
+            return !m_IsPlaced;
+        }
+        set
+        {
+            base.CanBePicked = value;
+        }
+    }
+
+    protected override void Awake()
+    {
+        base.Awake();
+    }
+
+    public override void PickUp()
+    {
+        base.PickUp();
+    }
+
+    public override void Use()
+    {
+        isUsed = true;
+    }
+
+    public override void Throw(Vector3 direction, float force)
+    {
+        rigidbody.useGravity = true;
+        rigidbody.isKinematic = false;
+        GetComponent<Collider>().enabled = true;
+
+        transform.parent = null;
+
+        rigidbody.AddForce(direction * force, ForceMode.Impulse);
+        isUsed = true;
+    }
+
     void Update()
     {
-        remainingTime += Time.deltaTime;
-        if(remainingTime > timeToExplode || isExplosion)
+        if(isUsed)
         {
-            if (!exploded)
+            remainingTime += Time.deltaTime;
+            if (remainingTime > timeToExplode || isExplosion)
             {
-                Explode();
-                remainingTime = timeToExplode - 4;
-                exploded = true;
+                if (!exploded)
+                {
+                    Explode();
+                    remainingTime = timeToExplode - 2;
+                    exploded = true;
+                }
+                else
+                {
+                    expl.Stop();
+                    Destroy(gameObject);
+                }
             }
             else
             {
-                expl.Stop();
-                Destroy(gameObject);
+                transform.LookAt(FindTarget());
+                transform.Translate(Vector3.forward * runSpeed * Time.deltaTime);
             }
         }
-        else
-        {
-            transform.LookAt(FindTarget());
-            transform.Translate(Vector3.forward * runSpeed * Time.deltaTime);
-        }
 
-        
     }
 
     Transform FindTarget()
