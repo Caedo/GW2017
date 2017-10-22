@@ -55,6 +55,8 @@ public class GameManager : MonoBehaviour {
         foreach (var item in m_Players) {
             item.GetComponent<PlayerMovement>().enabled = false;
         }
+
+		WinnerController.winner = winner.m_PlayerName;
     }
 
     private void OnDisable() {

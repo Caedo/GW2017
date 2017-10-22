@@ -6,11 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class WinnerController : MenuState {
 
+	public static string winner;
+
 	public Text timerLabel;
 	public Text nickNameWinner;
 
+
+
 	void Start(){
 		timerLabel.text = GameUIController.actualTime;
+		nickNameWinner.text = winner;
 
 		Time.timeScale = 0;
 		Time.fixedDeltaTime = 0;
@@ -25,4 +30,5 @@ public class WinnerController : MenuState {
 		Time.fixedDeltaTime = 0.02f;
 		SceneManager.LoadScene("Main");
 	}
+
 }

@@ -114,9 +114,9 @@ public class PlayerItemsController : MonoBehaviour {
         //}
 
         RaycastHit hit;
-        Debug.DrawRay(transform.position + Vector3.up / 2, transform.forward * m_MinPickuUpRadius, Color.red);
+        Debug.DrawRay(transform.position + Vector3.up / 3, transform.forward * m_MinPickuUpRadius, Color.red);
 
-        if (Physics.Raycast(transform.position + Vector3.up /2 ,transform.forward, out hit, m_PickUpRadius, m_AnchorMask)) {
+        if (Physics.Raycast(transform.position + Vector3.up /2 ,transform.forward, out hit, m_PickUpRadius, m_AnchorMask, QueryTriggerInteraction.Collide)) {
             Anchor anchor = hit.collider.GetComponent<Anchor>();
             if (anchor && anchor.m_IsAvaible) {
                 m_ClosestAnchor = anchor;
@@ -139,7 +139,7 @@ public class PlayerItemsController : MonoBehaviour {
     void ThrowItem() {
         if (m_HasItem) {
             Vector3 dir = m_Player.m_OtherPlayer.transform.position;
-            if (Vector3.Angle(dir, transform.forward) < 10f) {
+            if (Vector3.Angle(dir, transform.forward) < 20f) {
                 m_PickedItem.Throw(dir, m_ThrowForce);
 
             }

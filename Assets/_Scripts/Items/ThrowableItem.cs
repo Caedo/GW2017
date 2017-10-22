@@ -25,7 +25,7 @@ public class ThrowableItem : Item
 
     public override void Use()
     {
-        throw new NotImplementedException();
+
     }
 
     public override void PickUp()

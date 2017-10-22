@@ -47,6 +47,6 @@ public class ProgressBar : MonoBehaviour {
             }
         }
 
-        progressBar.GetComponent<Image>().fillAmount = (maxHeight - minHeight)/10;
+        progressBar.GetComponent<Image>().fillAmount = (maxHeight - minHeight)/5;
     }
 }
