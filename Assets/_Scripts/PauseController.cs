@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseController : MenuState {
 
@@ -9,5 +10,11 @@ public class PauseController : MenuState {
 	}
 	public void Resume(){
 		MenuStateMachine.Instance.PopState ();
+	}
+	public void GoToMenu(){
+		SceneManager.LoadScene("Menu");
+	}
+	public void Restart(){
+		SceneManager.LoadScene("Main");
 	}
 }
