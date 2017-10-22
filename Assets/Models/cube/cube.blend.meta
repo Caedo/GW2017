@@ -1,5 +1,7 @@
 fileFormatVersion: 2
-guid: 2e770fd3f8d3ab443ad612011a2d9d55
+guid: 3e2b17c9d5191fb4fb1fbc3f46c42b97
+timeCreated: 1508635642
+licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
@@ -7,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: sword1
+    4300000: cube
     7400000: Default Take
     9500000: //RootNode
   materials:

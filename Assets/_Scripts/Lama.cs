@@ -7,7 +7,12 @@ public class Lama : MonoBehaviour {
     public float runSpeed = 6;
     public float timeToExplode = 5;
     public float maxDistanceFromPlayer = 1;
+    public ParticleSystem explosion;
+    public float explosionRadius = 5.0f;
+    public float explosionPower = 500.0f;
 
+    private ParticleSystem expl;
+    private bool exploded = false;
     private bool isExplosion = false;
     private float remainingTime = 0;
     Rigidbody rb;
@@ -22,7 +27,17 @@ public class Lama : MonoBehaviour {
         remainingTime += Time.deltaTime;
         if(remainingTime > timeToExplode || isExplosion)
         {
-            Explode();
+            if (!exploded)
+            {
+                Explode();
+                remainingTime = timeToExplode - 4;
+                exploded = true;
+            }
+            else
+            {
+                expl.Stop();
+                Destroy(gameObject);
+            }
         }
         else
         {
@@ -35,7 +50,6 @@ public class Lama : MonoBehaviour {
 
     Transform FindTarget()
     {
-        
         var targets = GameObject.FindGameObjectsWithTag("Player");
 
         float distance = Vector3.Distance(transform.position, targets[0].transform.position);
@@ -62,6 +76,18 @@ public class Lama : MonoBehaviour {
 
     void Explode()
     {
+        expl = Instantiate(explosion, transform.position, Quaternion.identity);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, explosionRadius);
 
+        for (int i = 0; i < hitColliders.Length; i++)
+        {
+            if (hitColliders[i].CompareTag("Player"))
+            {
+                Rigidbody rb = hitColliders[i].GetComponentInParent<Rigidbody>();
+                rb.AddExplosionForce(explosionPower, transform.position, explosionRadius);
+            }
+        }
+
+        exploded = true;
     }
 }
