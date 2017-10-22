@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour {
     public List<Tower> m_Towers = new List<Tower>();
     public List<Transform> m_SpawnPoints = new List<Transform>();
 
+    List<Player> m_Players = new List<Player>();
+
     GameSettings m_GameSettings;
 
     private void Awake() {
@@ -37,11 +39,16 @@ public class GameManager : MonoBehaviour {
 
             Player player = Instantiate(m_PlayerPrefab, m_SpawnPoints[i].position, m_SpawnPoints[i].rotation);
             player.Initialize(m_GameSettings.m_Players[i]);
+
+            m_Players.Add(player);
         }
     }
 
     void OnGameEnd(Player winner) {
-        Debug.Log("Hueh");
+        MenuStateMachine.Instance.PushState<WinnerController>();
+        foreach (var item in m_Players) {
+            item.GetComponent<PlayerMovement>().enabled = false;
+        }
     }
 
     private void OnDisable() {

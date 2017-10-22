@@ -48,6 +48,11 @@ public class PlayerItemsController : MonoBehaviour {
                     PlaceItem();
                 }
             }
+            else {
+                if (Input.GetButtonDown(m_PlayerInput.itemUse)) {
+                    UseItem();
+                }
+            }
         }
 
         if (Input.GetButtonDown(m_PlayerInput.itemUse)) {
@@ -126,6 +131,11 @@ public class PlayerItemsController : MonoBehaviour {
             m_PickedItem.Throw(transform.forward, m_ThrowForce);
             m_PickedItem = null;
         }
+    }
+
+    void UseItem() {
+        m_PickedItem.Use();
+        m_PickedItem = null;
     }
 
     void PickUpItem() {
