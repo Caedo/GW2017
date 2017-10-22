@@ -10,6 +10,7 @@ public class BlockSpawner : MonoBehaviour {
 
     float timeToSpawn = 1.0f;
 
+
 	// Use this for initialization
 	void Start () {
 		
