@@ -70,6 +70,8 @@ public class Lama : Item {
                     Explode();
                     remainingTime = timeToExplode - 2;
                     exploded = true;
+                    MeshRenderer mr = gameObject.GetComponentInChildren<MeshRenderer>();
+                    mr.enabled = false;
                 }
                 else
                 {
