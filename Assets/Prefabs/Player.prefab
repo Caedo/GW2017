@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 136957004521032602}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1178,7 +1178,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   runSpeed: 7
-  jumpHeight: 2
+  jumpHeight: 4
   jumpRayLength: 0.2
   airControlPercent: 0.5
   turnSmoothTime: 0.05
@@ -1220,7 +1220,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   m_PickUpRadius: 3
-  m_MinPickuUpRadius: 0
+  m_MinPickuUpRadius: 2
   m_ThrowForce: 50
   m_PickUpHolder: {fileID: 4921434907804490}
   m_PlayerInput:
