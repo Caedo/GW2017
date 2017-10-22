@@ -14,4 +14,7 @@ public class PauseController : MenuState {
 	public void GoToMenu(){
 		SceneManager.LoadScene("Menu");
 	}
+	public void Restart(){
+		SceneManager.LoadScene("Main");
+	}
 }
