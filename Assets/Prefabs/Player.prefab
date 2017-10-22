@@ -1174,8 +1174,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da54243ba24eef40b42042a396a1ae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 1024
   runSpeed: 7
-  gravity: -25
   jumpHeight: 2
   jumpRayLength: 0.2
   airControlPercent: 0.5
@@ -1218,6 +1220,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   m_PickUpRadius: 3
+  m_MinPickuUpRadius: 0
   m_ThrowForce: 50
   m_PickUpHolder: {fileID: 4921434907804490}
   m_PlayerInput:
