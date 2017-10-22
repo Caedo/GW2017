@@ -13,6 +13,8 @@ public class PlayerInput {
 
 public class Player : MonoBehaviour {
 
+	public AudioSource[] audio;
+
     public PlayerType m_PlayerType;
     public string m_PlayerName;
     public PlayerInput m_PlayerInput;
