@@ -9,6 +9,7 @@ public class PlayerInfo {
     public int m_SkinIndex;
 }
 
+[CreateAssetMenu(menuName = "GameSettings/Settings")]
 public class GameSettings : ScriptableObject {
 
     public static GameSettings SelectedGameSettings;

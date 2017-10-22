@@ -390,7 +390,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95e68695df272ab40aed47a0ad669c8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PlayerPrefab: {fileID: 0}
+  m_PlayerPrefab: {fileID: 114845935982646396, guid: e90d905c9a0875347a6911ff1635f7d8,
+    type: 2}
   m_Towers:
   - {fileID: 1636875854}
   - {fileID: 1521828094}
