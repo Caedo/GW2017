@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ec854422e2c0e9d44aa6bf3acea6dcfa
+guid: 2e770fd3f8d3ab443ad612011a2d9d55
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
@@ -7,7 +7,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: lama
+    4300000: sword1
     7400000: Default Take
     9500000: //RootNode
   materials:

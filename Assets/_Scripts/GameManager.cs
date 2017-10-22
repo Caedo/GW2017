@@ -11,6 +11,8 @@ public enum PlayerType {
 
 public class GameManager : MonoBehaviour {
 
+    public GameSettings m_DefaultGameSettings;
+
     public Player m_PlayerPrefab;
     public List<Tower> m_Towers = new List<Tower>();
     public List<Transform> m_SpawnPoints = new List<Transform>();
@@ -18,7 +20,7 @@ public class GameManager : MonoBehaviour {
     GameSettings m_GameSettings;
 
     private void Start() {
-        m_GameSettings = GameSettings.SelectedGameSettings;
+        m_GameSettings = GameSettings.SelectedGameSettings == null ? m_DefaultGameSettings : GameSettings.SelectedGameSettings;
 
         for (int i = 0; i < m_GameSettings.PlayersCount; i++) {
             m_Towers[i].gameObject.SetActive(true);

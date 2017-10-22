@@ -109,7 +109,7 @@ public class PlayerItemsController : MonoBehaviour {
 
     void PickUpItem() {
 
-        if (!m_HasItem && m_ClosestItem != null) {
+        if (!m_HasItem && m_ClosestItem != null && m_ClosestItem.CanBePicked) {
 
             m_ClosestItem.PickUp();
 

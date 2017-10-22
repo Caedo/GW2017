@@ -7,7 +7,18 @@ public class Block : Item {
 
     bool m_IsPlaced;
 
+    Anchor m_AttachedAnchor;
     Anchor[] m_Anchors;
+
+    public override bool CanBePicked {
+        get {
+            return !m_IsPlaced;
+        }
+
+        set {
+            base.CanBePicked = value;
+        }
+    }
 
     protected override void Awake() {
         base.Awake();
@@ -16,7 +27,7 @@ public class Block : Item {
     }
 
     private void Start() {
-        SetAnchorsAvaible(true);
+        SetAnchorsAvaible(false);
     }
 
     public override void PlaceBlock(Anchor anchor) {
@@ -24,8 +35,14 @@ public class Block : Item {
         transform.position = anchor.transform.position;
         transform.rotation = anchor.transform.rotation;
 
+        m_AttachedAnchor = anchor;
+
+        GetComponent<Collider>().enabled = true;
+
         anchor.HasBlock = true;
+        anchor.m_IsAvaible = false;
         m_IsPlaced = true;
+        SetAnchorsAvaible(true);
     }
 
     public override void Use() {
