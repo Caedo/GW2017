@@ -75,7 +75,6 @@ public class PlayerMovement : MonoBehaviour {
 
     private void Jump() {
         if (IsGrounded()) {
-            Debug.Log("JUMP");
             //float jumpVelocity = Mathf.Sqrt(-2 * gravity * jumpHeight);
             //velocityY = jumpVelocity;
             rigidbody.AddForce(transform.up * jumpHeight, ForceMode.Impulse);

@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ThrowableItem : Item
 {
     bool m_IsPlaced;
-
+    
     public override bool CanBePicked
     {
         get
