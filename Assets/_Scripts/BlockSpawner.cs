@@ -12,6 +12,7 @@ public class BlockSpawner : MonoBehaviour {
     public Transform sword;
     public Transform bomb;
     public Transform lama;
+    public Transform banana;
     public float areaSize = 2.0f;
     public int blockQuantity = 1;
     public int specialBlockQuantity = 1;
@@ -28,7 +29,8 @@ public class BlockSpawner : MonoBehaviour {
         {
             sword,
             bomb,
-            lama
+            lama,
+            banana
         };
 	}
 	
@@ -51,7 +53,7 @@ public class BlockSpawner : MonoBehaviour {
         {
             for(int i = 0; i < specialBlockQuantity; i++)
             {
-                int index = Random.Range(0, 3);
+                int index = Random.Range(0, 4);
                 Vector3 position = new Vector3(Random.Range(-areaSize, areaSize), 0, Random.Range(-areaSize, areaSize)) + transform.position;
                 Instantiate(specialItem[index], position, Quaternion.identity);
             }

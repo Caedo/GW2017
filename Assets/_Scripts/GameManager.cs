@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour {
     public List<Tower> m_Towers = new List<Tower>();
     public List<Transform> m_SpawnPoints = new List<Transform>();
 
+    public Texture[] skins;
+
     List<Player> m_Players = new List<Player>();
 
     GameSettings m_GameSettings;
@@ -42,6 +44,10 @@ public class GameManager : MonoBehaviour {
 
             m_Players.Add(player);
         }
+
+        m_Players[0].m_OtherPlayer = m_Players[1].m_OtherPlayer;
+        m_Players[1].m_OtherPlayer = m_Players[0].m_OtherPlayer;
+
     }
 
     void OnGameEnd(Player winner) {
