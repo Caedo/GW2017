@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Lama : Item {
 
+
     bool m_IsPlaced;
     bool isUsed = false;
 
@@ -19,6 +20,8 @@ public class Lama : Item {
     private bool isExplosion = false;
     private float remainingTime = 0;
 
+	AudioSource source;
+
     public override bool CanBePicked
     {
         get
@@ -33,6 +36,7 @@ public class Lama : Item {
 
     protected override void Awake()
     {
+		source = GetComponent<AudioSource> ();
         base.Awake();
     }
 
@@ -121,6 +125,7 @@ public class Lama : Item {
 
     void Explode()
     {
+		source.Play ();
         expl = Instantiate(explosion, transform.position, Quaternion.identity);
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, explosionRadius);
 
