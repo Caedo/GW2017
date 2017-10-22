@@ -74,21 +74,16 @@ public class Block : Item {
 
 	public void TakeDamage(int amount){
 		currentHealth -= amount;
-		if (currentHealth < 75) 
-			rend.material.mainTexture = tex1;
+		if (currentHealth < 20) 
+			rend.material.mainTexture = tex3;
 		else if(currentHealth < 50)
 			rend.material.mainTexture = tex2;
-		else if(currentHealth < 20)
-			rend.material.mainTexture = tex3;
+		else if(currentHealth < 75)
+			rend.material.mainTexture = tex1;
 		
 		if (currentHealth <= 0) {
 			currentHealth = 0;
 			Destroy (gameObject);
-		}
-	}
-	void Update(){
-		if (Input.GetKeyDown (KeyCode.F)) {
-			TakeDamage (10);
 		}
 	}
 }
