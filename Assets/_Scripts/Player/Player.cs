@@ -13,12 +13,11 @@ public class PlayerInput {
 
 public class Player : MonoBehaviour {
 
-	public AudioSource[] audio;
+	public AudioClip[] audio;
 
     public PlayerType m_PlayerType;
     public string m_PlayerName;
     public PlayerInput m_PlayerInput;
-    public Player m_OtherPlayer;
 
     void SetupPlayerInput() {
          m_PlayerInput = new PlayerInput()
@@ -35,8 +34,6 @@ public class Player : MonoBehaviour {
     public void Initialize(PlayerInfo info) {
         m_PlayerName = info.m_Name;
         m_PlayerType = info.m_PlayerType;
-
-        GetComponentInChildren<Renderer>().material.SetTexture("Albedo", GameManager.Instance.skins[info.m_SkinIndex]);
 
         SetupPlayerInput();
     }
