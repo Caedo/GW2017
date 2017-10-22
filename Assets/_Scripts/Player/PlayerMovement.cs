@@ -2,12 +2,13 @@
 
 
 
-[RequireComponent(typeof(CharacterController))]
+//[RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour {
 
     public float runSpeed = 6;
     public float gravity = -12;
     public float jumpHeight = 1;
+    public float jumpRayLength = 0.2f;
     [Range(0, 1)]
     public float airControlPercent;
     public float turnSmoothTime = 0.2f;
@@ -19,7 +20,8 @@ public class PlayerMovement : MonoBehaviour {
     private float velocityY;
 
     float targetSpeed = 0.001f;
-    CharacterController controller;
+    //CharacterController controller;
+    new Rigidbody rigidbody;
 
     PlayerInput m_PlayerInput;
 
@@ -33,14 +35,15 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void Awake() {
-        controller = GetComponent<CharacterController>();
+        //controller = GetComponent<CharacterController>();
+        rigidbody = GetComponent<Rigidbody>();
     }
 
     private void Start() {
         m_PlayerInput = GetComponent<Player>().m_PlayerInput;
     }
 
-    void Update() {
+    void FixedUpdate() {
         m_PlayerInput = GetComponent<Player>().m_PlayerInput;
 
         Vector2 input = new Vector2(Input.GetAxisRaw(m_PlayerInput.horizontal), Input.GetAxisRaw(m_PlayerInput.vertical));
@@ -66,23 +69,24 @@ public class PlayerMovement : MonoBehaviour {
         velocityY += Time.deltaTime * gravity;
         Vector3 velocity = transform.forward * currentSpeed + Vector3.up * velocityY;
 
-        controller.Move(velocity * Time.deltaTime);
-        currentSpeed = new Vector2(controller.velocity.x, controller.velocity.z).magnitude;
+        //controller.Move(velocity * Time.deltaTime);
+        rigidbody.MovePosition(velocity * Time.deltaTime + transform.position);
+        currentSpeed = new Vector2(rigidbody.velocity.x, rigidbody.velocity.z).magnitude;
 
-        if (controller.isGrounded) {
+        if (IsGrounded()) {
             velocityY = 0;
         }
     }
 
     private void Jump() {
-        if (controller.isGrounded) {
+        if (IsGrounded()) {
             float jumpVelocity = Mathf.Sqrt(-2 * gravity * jumpHeight);
             velocityY = jumpVelocity;
         }
     }
 
     private float GetModifiedSmoothTime(float smoothTime) {
-        if (controller.isGrounded) {
+        if (IsGrounded()) {
             return smoothTime;
         }
 
@@ -90,5 +94,12 @@ public class PlayerMovement : MonoBehaviour {
             return float.MaxValue;
         }
         return smoothTime / airControlPercent;
+    }
+
+    bool IsGrounded() {
+        if(Physics.Raycast(transform.position, -transform.up, jumpRayLength, LayerMask.GetMask("Ground") )) {
+            return true;
+        }
+        return false;
     }
 }

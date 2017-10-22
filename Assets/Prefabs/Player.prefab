@@ -79,11 +79,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4995565306182700}
-  - component: {fileID: 143313840710433278}
   - component: {fileID: 114181103845180208}
   - component: {fileID: 114877017808724588}
   - component: {fileID: 114119551504558656}
   - component: {fileID: 114845935982646396}
+  - component: {fileID: 54360781554175254}
+  - component: {fileID: 136262186217907200}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1111,7 +1112,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1095667396369534}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 15.690145, y: 9.413721, z: 11.579264}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4617757273982834}
@@ -1119,6 +1120,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &54360781554175254
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1095667396369534}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!95 &95445256378959020
 Animator:
   serializedVersion: 3
@@ -1161,6 +1177,7 @@ MonoBehaviour:
   runSpeed: 6
   gravity: -25
   jumpHeight: 2
+  jumpRayLength: 0.2
   airControlPercent: 0.5
   turnSmoothTime: 0.05
   speedSmoothTime: 0.1
@@ -1175,6 +1192,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f16aa7094816574db0f33c6a08fd83d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_PlayerType: 0
+  m_PlayerName: 
+  m_PlayerInput:
+    horizontal: 
+    vertical: 
+    jump: 
+    itemThrow: 
+    itemUse: 
 --- !u!114 &114877017808724588
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1195,6 +1220,25 @@ MonoBehaviour:
   m_PickUpRadius: 3
   m_ThrowForce: 50
   m_PickUpHolder: {fileID: 4921434907804490}
+  m_PlayerInput:
+    horizontal: 
+    vertical: 
+    jump: 
+    itemThrow: 
+    itemUse: 
+--- !u!136 &136262186217907200
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1095667396369534}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.17
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.2, z: 0}
 --- !u!137 &137899183516143054
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -1272,20 +1316,3 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.9966587, y: 0.02315867, z: 0.414115}
     m_Extent: {x: 4.255133, y: 1.9315349, z: 1.6633615}
   m_DirtyAABB: 0
---- !u!143 &143313840710433278
-CharacterController:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1095667396369534}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 1.8
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}

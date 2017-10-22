@@ -10,6 +10,14 @@ public class Block : Item {
     Anchor m_AttachedAnchor;
     Anchor[] m_Anchors;
 
+	public const int maxHealth = 100;
+	public int currentHealth = maxHealth;
+
+	public Texture tex1;
+	public Texture tex2;
+	public Texture tex3;
+	private Renderer rend;
+
     public override bool CanBePicked {
         get {
             return !m_IsPlaced;
@@ -28,6 +36,7 @@ public class Block : Item {
 
     private void Start() {
         SetAnchorsAvaible(false);
+		rend = GetComponent<Renderer>();
     }
 
     public override void PlaceBlock(Anchor anchor) {
@@ -62,4 +71,19 @@ public class Block : Item {
             m_Anchors[i].m_IsAvaible = avaible;
         }
     }
+
+	public void TakeDamage(int amount){
+		currentHealth -= amount;
+		if (currentHealth < 20) 
+			rend.material.mainTexture = tex3;
+		else if(currentHealth < 50)
+			rend.material.mainTexture = tex2;
+		else if(currentHealth < 75)
+			rend.material.mainTexture = tex1;
+		
+		if (currentHealth <= 0) {
+			currentHealth = 0;
+			Destroy (gameObject);
+		}
+	}
 }
