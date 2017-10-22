@@ -138,7 +138,14 @@ public class PlayerItemsController : MonoBehaviour {
 
     void ThrowItem() {
         if (m_HasItem) {
-            m_PickedItem.Throw(transform.forward, m_ThrowForce);
+            Vector3 dir = m_Player.m_OtherPlayer.transform.position;
+            if (Vector3.Angle(dir, transform.forward) < 10f) {
+                m_PickedItem.Throw(dir, m_ThrowForce);
+
+            }
+            else {
+                m_PickedItem.Throw(transform.forward, m_ThrowForce);
+            }
             m_PickedItem = null;
         }
     }
