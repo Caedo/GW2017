@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4427665917213882}
   - component: {fileID: 33583156024426870}
   - component: {fileID: 23064742474878406}
+  - component: {fileID: 135166431489117372}
+  - component: {fileID: 114185839776018968}
   m_Layer: 0
   m_Name: goblet
   m_TagString: Untagged
@@ -52,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1438010178490184}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 32.738274, y: 9.327442, z: 22.165394}
+  m_LocalPosition: {x: 29.05323, y: 9.327442, z: 20.475891}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4674642995234210}
@@ -111,6 +113,29 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1438010178490184}
   m_Mesh: {fileID: 4300000, guid: 3130ac64f8db37c47bc4a2afdc6ce1e7, type: 3}
+--- !u!114 &114185839776018968
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1438010178490184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 063e6c0968adffb49812e3a98e948e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &135166431489117372
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1438010178490184}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8
+  m_Center: {x: 0, y: 0, z: 0.35}
 --- !u!198 &198483522113240190
 ParticleSystem:
   m_ObjectHideFlags: 1
