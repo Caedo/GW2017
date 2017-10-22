@@ -43,6 +43,12 @@ public class Lama : Item {
 
     public override void Use()
     {
+        Debug.Log(1);
+        rigidbody.useGravity = true;
+        rigidbody.isKinematic = false;
+        GetComponent<Collider>().enabled = true;
+
+        transform.parent = null;
         isUsed = true;
     }
 
