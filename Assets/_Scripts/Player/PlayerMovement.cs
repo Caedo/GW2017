@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour {
     private float velocityY;
 
     float targetSpeed = 0.001f;
-    //CharacterController controller;
+    CharacterController controller;
     new Rigidbody rigidbody;
 
     PlayerInput m_PlayerInput;
@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void Awake() {
-        //controller = GetComponent<CharacterController>();
+        controller = GetComponent<CharacterController>();
         rigidbody = GetComponent<Rigidbody>();
     }
 
@@ -44,7 +44,6 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        m_PlayerInput = GetComponent<Player>().m_PlayerInput;
 
         Vector2 input = new Vector2(Input.GetAxisRaw(m_PlayerInput.horizontal), Input.GetAxisRaw(m_PlayerInput.vertical));
         Vector2 inputDir = input.normalized;
@@ -66,12 +65,11 @@ public class PlayerMovement : MonoBehaviour {
         targetSpeed = runSpeed * inputDir.magnitude;
         currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedSmoothVelocity, GetModifiedSmoothTime(speedSmoothTime));
 
-        velocityY += Time.deltaTime * gravity;
-        Vector3 velocity = transform.forward * currentSpeed + Vector3.up * velocityY;
+        //velocityY += Time.deltaTime * gravity;
+        Vector3 velocity = transform.forward * currentSpeed;
 
-        //controller.Move(velocity * Time.deltaTime);
         rigidbody.MovePosition(velocity * Time.deltaTime + transform.position);
-        currentSpeed = new Vector2(rigidbody.velocity.x, rigidbody.velocity.z).magnitude;
+        //currentSpeed = new Vector2(controller.velocity.x, controller.velocity.z).magnitude;
 
         if (IsGrounded()) {
             velocityY = 0;
@@ -80,8 +78,9 @@ public class PlayerMovement : MonoBehaviour {
 
     private void Jump() {
         if (IsGrounded()) {
-            float jumpVelocity = Mathf.Sqrt(-2 * gravity * jumpHeight);
-            velocityY = jumpVelocity;
+            //float jumpVelocity = Mathf.Sqrt(-2 * gravity * jumpHeight);
+            //velocityY = jumpVelocity;
+            rigidbody.AddForce(transform.up * jumpHeight);
         }
     }
 

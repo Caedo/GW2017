@@ -27,7 +27,7 @@ public class GameUIController : MenuState {
         timerLabel.text = actualTime = string.Format("{0:00} : {1:00}", minutes, seconds);
 
         //else
-        if (Input.GetButton("Cancel"))
+        if (Input.GetButtonDown("Cancel"))
             PauseMenu();
 
 
