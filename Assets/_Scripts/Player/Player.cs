@@ -13,7 +13,7 @@ public class PlayerInput {
 
 public class Player : MonoBehaviour {
 
-	public AudioClip[] audio;
+	public new AudioClip[] audio;
 
 	public Player m_OtherPlayer;
     public PlayerType m_PlayerType;
@@ -51,7 +51,7 @@ public class Player : MonoBehaviour {
     }
 	void OnCollisionEnter(Collision collision){
 
-		if (collision.relativeVelocity.magnitude > 3) {
+		if (collision.relativeVelocity.magnitude >10 ) {
 			source.clip = audio [0];
 			source.Play ();
 		}
@@ -61,7 +61,7 @@ public class Player : MonoBehaviour {
 
 		if(timeToPlay <= 0)
 		{
-			numberClip = Random.Range(1, 5);
+            numberClip = Random.Range(1, audio.Length);
 			timeToPlay = Random.Range(PlayTimeMin, PlayTimeMax);
 			source.clip = audio [numberClip];
 			source.Play ();

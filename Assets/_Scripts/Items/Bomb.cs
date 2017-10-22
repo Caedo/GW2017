@@ -32,7 +32,6 @@ public class Bomb : Item
 
     public override void Throw(Vector3 direction, float force)
     {
-        Debug.Log("a");
         rigidbody.useGravity = true;
         rigidbody.isKinematic = false;
         GetComponent<Collider>().enabled = true;

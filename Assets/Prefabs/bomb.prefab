@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlaceable: 0
-  timeToExplode: 1
+  timeToExplode: 0.5
   maxDistanceFromPlayer: 1
   explosion: {fileID: 198000012777718758, guid: acf39d9f4addf294d93fa56fa373961b,
     type: 2}

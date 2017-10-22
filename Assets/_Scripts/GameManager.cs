@@ -45,8 +45,8 @@ public class GameManager : MonoBehaviour {
             m_Players.Add(player);
         }
 
-        m_Players[0].m_OtherPlayer = m_Players[1].m_OtherPlayer;
-        m_Players[1].m_OtherPlayer = m_Players[0].m_OtherPlayer;
+        m_Players[0].m_OtherPlayer = m_Players[1];
+        m_Players[1].m_OtherPlayer = m_Players[0];
 
     }
 
