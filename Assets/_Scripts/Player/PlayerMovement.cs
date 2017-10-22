@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour {
 
     public LayerMask groundMask;
     public float runSpeed = 6;
-    public float jumpHeight = 1;
+    public float jumpHeight = 6;
     public float jumpRayLength = 0.2f;
     [Range(0, 1)]
     public float airControlPercent;
@@ -93,7 +93,7 @@ public class PlayerMovement : MonoBehaviour {
         return smoothTime / airControlPercent;
     }
 
-    bool IsGrounded() {
+    public bool IsGrounded() {
         if(Physics.Raycast(transform.position, -transform.up, jumpRayLength, groundMask)) {
             return true;
         }

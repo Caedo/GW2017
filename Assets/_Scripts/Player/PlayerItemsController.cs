@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerItemsController : MonoBehaviour {
 
     public System.Action<Item> OnItemThrow;
+	public System.Action<Item> OnItemPickedUp;
 
     public LayerMask m_ItemsMask;
     public LayerMask m_AnchorMask;
@@ -45,17 +46,26 @@ public class PlayerItemsController : MonoBehaviour {
                 FindClosestAnchor();
 
                 if (Input.GetButtonDown(m_PlayerInput.itemUse)) {
-                    PlaceItem();
+					if (OnItemThrow != null)
+						OnItemThrow(m_PickedItem);
+
+					PlaceItem();
                 }
             }
             else {
                 if (Input.GetButtonDown(m_PlayerInput.itemUse)) {
-                    UseItem();
+					if (OnItemThrow != null)
+						OnItemThrow(m_PickedItem);
+
+					UseItem();
                 }
             }
         }
 
         if (Input.GetButtonDown(m_PlayerInput.itemUse)) {
+			if (OnItemPickedUp != null)
+				OnItemPickedUp(m_PickedItem);
+
             PickUpItem();
         }
         if (Input.GetButtonDown(m_PlayerInput.itemThrow)) {
