@@ -15,10 +15,21 @@ public class Player : MonoBehaviour {
 
 	public AudioClip[] audio;
 
+	public Player m_OtherPlayer;
     public PlayerType m_PlayerType;
     public string m_PlayerName;
     public PlayerInput m_PlayerInput;
-	public Player m_OtherPlayer;
+
+	public float PlayTimeMin = 20.0f;
+	public float PlayTimeMax = 30.0f;
+	private float timeToPlay = 20.0f;
+	private int numberClip;
+
+	AudioSource source;
+
+	void Awake(){
+		source = GetComponent<AudioSource> ();
+	}
 
     void SetupPlayerInput() {
          m_PlayerInput = new PlayerInput()
@@ -38,4 +49,22 @@ public class Player : MonoBehaviour {
 
         SetupPlayerInput();
     }
+	void OnCollisionEnter(Collision collision){
+
+		if (collision.relativeVelocity.magnitude > 3) {
+			source.clip = audio [0];
+			source.Play ();
+		}
+	}
+	void Update (){
+		timeToPlay -= Time.deltaTime;
+
+		if(timeToPlay <= 0)
+		{
+			numberClip = Random.Range(1, 5);
+			timeToPlay = Random.Range(PlayTimeMin, PlayTimeMax);
+			source.clip = audio [numberClip];
+			source.Play ();
+		}
+	}
 }

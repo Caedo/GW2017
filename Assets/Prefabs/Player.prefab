@@ -1179,7 +1179,7 @@ MonoBehaviour:
     m_Bits: 1280
   runSpeed: 7
   jumpHeight: 6
-  jumpRayLength: 0.2
+  jumpRayLength: 0.05
   airControlPercent: 0.5
   turnSmoothTime: 0.05
   speedSmoothTime: 0.1
@@ -1194,6 +1194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f16aa7094816574db0f33c6a08fd83d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audio: []
   m_PlayerType: 0
   m_PlayerName: 
   m_PlayerInput:
@@ -1202,6 +1203,7 @@ MonoBehaviour:
     jump: 
     itemThrow: 
     itemUse: 
+  m_OtherPlayer: {fileID: 0}
 --- !u!114 &114877017808724588
 MonoBehaviour:
   m_ObjectHideFlags: 1
