@@ -1,30 +1,15 @@
 fileFormatVersion: 2
-guid: 6323cd7537841f2439db549d35aebab5
+guid: 9e42d362900fb99499fc53deacd5c547
+timeCreated: 1508659569
+licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
-    100000: leaves
-    100002: //RootNode
-    100004: tree1_MeshPart0
-    100006: tree1_MeshPart1
-    400000: leaves
-    400002: //RootNode
-    400004: tree1_MeshPart0
-    400006: tree1_MeshPart1
-    2300000: leaves
-    2300002: tree1_MeshPart0
-    2300004: tree1_MeshPart1
-    3300000: leaves
-    3300002: tree1_MeshPart0
-    3300004: tree1_MeshPart1
-    4300000: tree1_MeshPart0
-    4300002: tree1_MeshPart1
-    4300004: leaves
-    6400000: leaves
-    6400002: tree1_MeshPart0
-    6400004: tree1_MeshPart1
-    7400000: Default Take
-    9500000: //RootNode
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Plane.007
   materials:
     importMaterials: 1
     materialName: 0
@@ -54,13 +39,13 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
@@ -75,7 +60,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
