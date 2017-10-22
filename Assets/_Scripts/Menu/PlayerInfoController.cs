@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class PlayerInfoController : MonoBehaviour {
 
     public PlayerInfo PlayerInfo;
+    public Image selectionImage;
+    public Transform[] buttons;
 
     public void OnNameEditEnd(string name) {
         PlayerInfo.m_Name = name;
@@ -13,5 +15,6 @@ public class PlayerInfoController : MonoBehaviour {
 
     public void SetSkinIndex(int index) {
         PlayerInfo.m_SkinIndex = index;
+        selectionImage.transform.position = buttons[index].position;
     }
 }

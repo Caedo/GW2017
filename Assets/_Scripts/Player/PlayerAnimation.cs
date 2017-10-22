@@ -15,12 +15,18 @@ public class PlayerAnimation : MonoBehaviour {
         playerItemsController = GetComponent<PlayerItemsController>();
 
         playerItemsController.OnItemThrow += OnItemThrow;
+		playerItemsController.OnItemPickedUp += OnItemPickedUp;
     }
 
     // Update is called once per frame
     void Update () {
         animator.SetFloat("speedPercent", playerMovement.SpeedPercent, .1f, Time.deltaTime);
+		animator.SetBool("isJumping", !playerMovement.IsGrounded());
     }
+
+	void OnItemPickedUp(Item item) {
+		animator.SetTrigger("pickUp");
+	}
 
     void OnItemThrow(Item item) {
         animator.SetTrigger("throw");
