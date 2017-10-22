@@ -1176,7 +1176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundMask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 1280
   runSpeed: 7
   jumpHeight: 6
   jumpRayLength: 0.2

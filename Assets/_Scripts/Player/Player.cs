@@ -19,6 +19,7 @@ public class Player : MonoBehaviour {
     public PlayerType m_PlayerType;
     public string m_PlayerName;
     public PlayerInput m_PlayerInput;
+	public Player m_OtherPlayer;
 
 	public float PlayTimeMin = 20.0f;
 	public float PlayTimeMax = 30.0f;
