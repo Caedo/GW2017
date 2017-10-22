@@ -1869,7 +1869,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 774341307}
-  m_LocalRotation: {x: 0.337152, y: -0.0039351652, z: 0.0014092744, w: 0.94144094}
+  m_LocalRotation: {x: 0.3371545, y: -0.0015736114, z: 0.00056354667, w: 0.94144785}
   m_LocalPosition: {x: 28.590702, y: 23.194782, z: 8.20022}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -3009,6 +3009,7 @@ MonoBehaviour:
   m_SpawnPoints:
   - {fileID: 223584832}
   - {fileID: 2098311106}
+  skins: []
 --- !u!4 &1288624318
 Transform:
   m_ObjectHideFlags: 0
@@ -3292,6 +3293,7 @@ MonoBehaviour:
   sword: {fileID: 4782166452757130, guid: 76d76262ba3fede4b94728eff425002b, type: 2}
   bomb: {fileID: 4791058340236614, guid: 9adab8dea88257e4c8bddb24aa800c63, type: 2}
   lama: {fileID: 4391927259199730, guid: 55a505be50722364b9979cdf5ae54f86, type: 2}
+  banana: {fileID: 4126217326440548, guid: e4e56d4b3fa2081449865b521e22bc88, type: 2}
   areaSize: 5.15
   blockQuantity: 1
   specialBlockQuantity: 1
@@ -4199,7 +4201,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1866299454}
-  m_LocalRotation: {x: 0.337152, y: -0.0039351652, z: 0.0014092744, w: 0.94144094}
+  m_LocalRotation: {x: 0.3371545, y: -0.0015736114, z: 0.00056354667, w: 0.94144785}
   m_LocalPosition: {x: 28.590702, y: 23.194782, z: 8.20022}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
