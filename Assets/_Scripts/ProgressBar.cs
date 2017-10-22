@@ -16,6 +16,8 @@ public class ProgressBar : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        tower1 = GameManager.Instance.m_Towers[0].transform;
+        tower2 = GameManager.Instance.m_Towers[1].transform;
 
     }
 
@@ -45,6 +47,6 @@ public class ProgressBar : MonoBehaviour {
             }
         }
 
-        progressBar.GetComponent<Image>().fillAmount = maxHeight - minHeight;
+        progressBar.GetComponent<Image>().fillAmount = (maxHeight - minHeight)/10;
     }
 }
