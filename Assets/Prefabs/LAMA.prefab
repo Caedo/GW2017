@@ -110,7 +110,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1024463559380716}
-  m_Mesh: {fileID: 4300000, guid: c74bf24442a9be7408b28ae675bba10e, type: 3}
+  m_Mesh: {fileID: 4300000, guid: ec854422e2c0e9d44aa6bf3acea6dcfa, type: 3}
 --- !u!95 &95403934707272204
 Animator:
   serializedVersion: 3
@@ -144,3 +144,5 @@ MonoBehaviour:
   maxDistanceFromPlayer: 1
   explosion: {fileID: 198000012777718758, guid: acf39d9f4addf294d93fa56fa373961b,
     type: 2}
+  explosionRadius: 5
+  explosionPower: 5000
