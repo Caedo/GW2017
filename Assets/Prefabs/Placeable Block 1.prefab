@@ -625,7 +625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4891ac551d61f048a098a90881ef3c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IsPlaceable: 0
+  m_IsPlaceable: 1
   currentHealth: 100
   tex1: {fileID: 2800000, guid: a4f098fa42c515f45b28ac3bd74502e2, type: 3}
   tex2: {fileID: 2800000, guid: 1b97b76d4941000428066bb44463404d, type: 3}
