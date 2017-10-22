@@ -20,10 +20,11 @@ public class PlayerMovement : MonoBehaviour {
     private float velocityY;
 
     float targetSpeed = 0.001f;
-    CharacterController controller;
     new Rigidbody rigidbody;
 
     PlayerInput m_PlayerInput;
+	BoxCollider collider;
+
 
     public float SpeedPercent {
         get {
@@ -35,7 +36,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void Awake() {
-        controller = GetComponent<CharacterController>();
+		collider = GetComponent<BoxCollider>();
         rigidbody = GetComponent<Rigidbody>();
     }
 
@@ -93,7 +94,21 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     public bool IsGrounded() {
-        if(Physics.Raycast(transform.position, -transform.up, jumpRayLength, groundMask)) {
+		var extents = collider.bounds.extents;
+
+		Vector3 magic = new Vector3(0.0f, 0.05f, 0.0f);
+		Vector3 first = new Vector3(extents.x, 0.0f, extents.z);
+		Vector3 second = new Vector3(extents.x, 0.0f, -extents.z);
+		Vector3 third = new Vector3(-extents.x, 0.0f, extents.z);
+		Vector3 fourth = new Vector3(-extents.x, 0.0f, -extents.z);
+
+
+		if (
+			Physics.Raycast(transform.position + magic + first, -transform.up, jumpRayLength, groundMask) ||
+			Physics.Raycast(transform.position + magic + second, -transform.up, jumpRayLength, groundMask) ||
+			Physics.Raycast(transform.position + magic + third, -transform.up, jumpRayLength, groundMask) ||
+			Physics.Raycast(transform.position + magic + fourth, -transform.up, jumpRayLength, groundMask)
+			) {
             return true;
         }
         return false;
