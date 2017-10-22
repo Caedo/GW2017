@@ -5,8 +5,8 @@
 //[RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour {
 
+    public LayerMask groundMask;
     public float runSpeed = 6;
-    public float gravity = -12;
     public float jumpHeight = 1;
     public float jumpRayLength = 0.2f;
     [Range(0, 1)]
@@ -59,7 +59,8 @@ public class PlayerMovement : MonoBehaviour {
     private void Move(Vector2 inputDir) {
         if (inputDir != Vector2.zero) {
             float targetRotation = Mathf.Atan2(inputDir.x, inputDir.y) * Mathf.Rad2Deg;
-            transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref turnSmoothVelocity, GetModifiedSmoothTime(turnSmoothTime));
+            Vector3 euler = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref turnSmoothVelocity, GetModifiedSmoothTime(turnSmoothTime));
+            rigidbody.rotation = Quaternion.Euler(euler);
         }
 
         targetSpeed = runSpeed * inputDir.magnitude;
@@ -70,17 +71,14 @@ public class PlayerMovement : MonoBehaviour {
 
         rigidbody.MovePosition(velocity * Time.deltaTime + transform.position);
         //currentSpeed = new Vector2(controller.velocity.x, controller.velocity.z).magnitude;
-
-        if (IsGrounded()) {
-            velocityY = 0;
-        }
     }
 
     private void Jump() {
         if (IsGrounded()) {
+            Debug.Log("JUMP");
             //float jumpVelocity = Mathf.Sqrt(-2 * gravity * jumpHeight);
             //velocityY = jumpVelocity;
-            rigidbody.AddForce(transform.up * jumpHeight);
+            rigidbody.AddForce(transform.up * jumpHeight, ForceMode.Impulse);
         }
     }
 
@@ -96,7 +94,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     bool IsGrounded() {
-        if(Physics.Raycast(transform.position, -transform.up, jumpRayLength, LayerMask.GetMask("Ground") )) {
+        if(Physics.Raycast(transform.position, -transform.up, jumpRayLength, groundMask)) {
             return true;
         }
         return false;

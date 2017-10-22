@@ -21,6 +21,7 @@ public class BlockSpawner : MonoBehaviour {
 
     List<Transform> specialItem;
 
+
 	// Use this for initialization
 	void Start () {
         specialItem = new List<Transform>
