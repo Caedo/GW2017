@@ -18,6 +18,7 @@ public class Player : MonoBehaviour {
     public PlayerType m_PlayerType;
     public string m_PlayerName;
     public PlayerInput m_PlayerInput;
+	public Player m_OtherPlayer;
 
     void SetupPlayerInput() {
          m_PlayerInput = new PlayerInput()
