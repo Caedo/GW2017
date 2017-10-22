@@ -1178,7 +1178,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   runSpeed: 7
-  jumpHeight: 4
+  jumpHeight: 6
   jumpRayLength: 0.2
   airControlPercent: 0.5
   turnSmoothTime: 0.05
