@@ -862,7 +862,7 @@ MonoBehaviour:
   spawnTimeMax: 1.63
   specialSpawnTimeMin: 2
   specialSpawnTimeMax: 5
-  blockPrefab: {fileID: 4455761364410582, guid: 0937d269c964e3b42bde191ff2798e42,
+  blockPrefab: {fileID: 4777463673714516, guid: 062d3639651c01942b8d69f67a293f3a,
     type: 2}
   sword: {fileID: 4782166452757130, guid: 76d76262ba3fede4b94728eff425002b, type: 2}
   bomb: {fileID: 4791058340236614, guid: 9adab8dea88257e4c8bddb24aa800c63, type: 2}
