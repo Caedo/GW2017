@@ -14,8 +14,14 @@ public class GameUIController : MenuState {
     public float time;
 
 	void Start(){
-		nick1.text = GameSettings.SelectedGameSettings.m_Players [0].m_Name;
-		nick2.text = GameSettings.SelectedGameSettings.m_Players [1].m_Name;
+        if (GameSettings.SelectedGameSettings != null) {
+            nick1.text = GameSettings.SelectedGameSettings.m_Players[0].m_Name;
+            nick2.text = GameSettings.SelectedGameSettings.m_Players[1].m_Name;
+        }
+        else {
+            nick1.text = GameManager.Instance.m_DefaultGameSettings.m_Players[0].m_Name;
+            nick2.text = GameManager.Instance.m_DefaultGameSettings.m_Players[1].m_Name;
+        }
 	}
     public void PauseMenu() {
         MenuStateMachine.Instance.PushState<PauseController>();
