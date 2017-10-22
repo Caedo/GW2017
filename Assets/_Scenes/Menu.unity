@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -146,6 +146,7 @@ MonoBehaviour:
   sword: {fileID: 4782166452757130, guid: 76d76262ba3fede4b94728eff425002b, type: 2}
   bomb: {fileID: 4791058340236614, guid: 9adab8dea88257e4c8bddb24aa800c63, type: 2}
   lama: {fileID: 4391927259199730, guid: 55a505be50722364b9979cdf5ae54f86, type: 2}
+  banana: {fileID: 0}
   areaSize: 5.15
   blockQuantity: 1
   specialBlockQuantity: 1

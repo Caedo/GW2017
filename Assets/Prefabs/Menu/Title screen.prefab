@@ -404,7 +404,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Title
+  m_Text: 'Peon smash!
+
+'
 --- !u!114 &114398446195439248
 MonoBehaviour:
   m_ObjectHideFlags: 1
