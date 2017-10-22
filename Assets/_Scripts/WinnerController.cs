@@ -11,6 +11,7 @@ public class WinnerController : MenuState {
 
 	void Start(){
 		timerLabel.text = GameUIController.actualTime;
+
 		Time.timeScale = 0;
 		Time.fixedDeltaTime = 0;
 	}

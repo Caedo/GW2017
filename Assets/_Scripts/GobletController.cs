@@ -6,7 +6,7 @@ public class GobletController : MonoBehaviour {
 
     public static System.Action<Player> OnGameEnds;
 
-    private void OnTriggerEnter(Collider other) {
+    public void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
             Player player = other.GetComponent<Player>();
 
