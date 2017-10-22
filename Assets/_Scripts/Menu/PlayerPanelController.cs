@@ -18,6 +18,8 @@ public class PlayerPanelController : MenuState {
 
         GameSettings.SelectedGameSettings = gameSettings;
 
+		Time.timeScale = 1;
+		Time.fixedDeltaTime = 0.02f;
         SceneManager.LoadScene("Main");
     }
 }

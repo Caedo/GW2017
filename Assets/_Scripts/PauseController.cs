@@ -19,11 +19,13 @@ public class PauseController : MenuState {
 		Time.fixedDeltaTime = 0.02f;
 	}
 	public void GoToMenu(){
+		Time.timeScale = 1;
+		Time.fixedDeltaTime = 0.02f;
 		SceneManager.LoadScene("Menu");
 	}
 	public void Restart(){
-		SceneManager.LoadScene("Main");
 		Time.timeScale = 1;
 		Time.fixedDeltaTime = 0.02f;
+		SceneManager.LoadScene("Main");
 	}
 }
