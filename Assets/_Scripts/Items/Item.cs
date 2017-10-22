@@ -7,14 +7,18 @@ public abstract class Item : MonoBehaviour {
 
     public bool m_IsPlaceable;
 
+    public virtual bool CanBePicked { get; set; }
+
     protected new Rigidbody rigidbody;
 
     protected virtual void Awake() {
         rigidbody = GetComponent<Rigidbody>();
+        CanBePicked = true;
     }
+
     public virtual void PlaceBlock(Anchor anchor) { }
+
     public virtual void PickUp() {
-        Debug.Log("LUL");
         rigidbody.useGravity = false;
         rigidbody.isKinematic = true;
         GetComponent<Collider>().enabled = false;
@@ -24,6 +28,7 @@ public abstract class Item : MonoBehaviour {
     }
 
     public abstract void Use();
+
     public virtual void Throw(Vector3 direction, float force) {
         rigidbody.useGravity = true;
         rigidbody.isKinematic = false;
