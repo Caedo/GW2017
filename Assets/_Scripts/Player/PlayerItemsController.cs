@@ -20,6 +20,7 @@ public class PlayerItemsController : MonoBehaviour {
 
     public PlayerInput m_PlayerInput;
 
+    Player m_Player;
 
     Item m_PickedItem;
     bool m_HasItem {
@@ -29,7 +30,8 @@ public class PlayerItemsController : MonoBehaviour {
     }
 
     private void Start() {
-        m_PlayerInput = GetComponent<Player>().m_PlayerInput;
+        m_Player = GetComponent<Player>();
+        m_PlayerInput = m_Player.m_PlayerInput;
 
     }
 
@@ -88,7 +90,7 @@ public class PlayerItemsController : MonoBehaviour {
 
             if (sqrDist < minDst) {
                 Anchor actualAnchor = anchor.GetComponent<Anchor>();
-                if (actualAnchor.m_IsAvaible) {
+                if (actualAnchor.m_IsAvaible && actualAnchor.player == m_Player.m_PlayerType) {
                     minDst = sqrDist;
                     m_ClosestAnchor = actualAnchor;
                 }

@@ -15,12 +15,6 @@ public class Lama : MonoBehaviour {
     private bool exploded = false;
     private bool isExplosion = false;
     private float remainingTime = 0;
-    Rigidbody rb;
-
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
 
     void Update()
     {
