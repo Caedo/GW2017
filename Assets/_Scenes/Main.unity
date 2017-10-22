@@ -1033,10 +1033,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b497df78b712dd4ca50eb43cc330255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progressBar1: {fileID: 1894718881}
-  progressBar2: {fileID: 405680838}
-  currentAmount1: 0
-  currentAmount2: 0
 --- !u!114 &1030780606
 MonoBehaviour:
   m_ObjectHideFlags: 0
