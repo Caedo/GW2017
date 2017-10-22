@@ -5,8 +5,8 @@
 //[RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour {
 
+    public LayerMask groundMask;
     public float runSpeed = 6;
-    public float gravity = -12;
     public float jumpHeight = 1;
     public float jumpRayLength = 0.2f;
     [Range(0, 1)]
@@ -94,7 +94,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     bool IsGrounded() {
-        if(Physics.Raycast(transform.position, -transform.up, jumpRayLength, LayerMask.GetMask("Ground") )) {
+        if(Physics.Raycast(transform.position, -transform.up, jumpRayLength, groundMask)) {
             return true;
         }
         return false;
