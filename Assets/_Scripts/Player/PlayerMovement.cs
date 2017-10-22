@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+
+
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour {
 
@@ -19,6 +21,8 @@ public class PlayerMovement : MonoBehaviour {
     float targetSpeed = 0.001f;
     CharacterController controller;
 
+    PlayerInput m_PlayerInput;
+
     public float SpeedPercent {
         get {
             if (targetSpeed > 0.0000001f)
@@ -32,13 +36,19 @@ public class PlayerMovement : MonoBehaviour {
         controller = GetComponent<CharacterController>();
     }
 
-    void Update() {
-        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        Vector2 inputDir = input.normalized;
+    private void Start() {
+        m_PlayerInput = GetComponent<Player>().m_PlayerInput;
+    }
 
+    void Update() {
+        m_PlayerInput = GetComponent<Player>().m_PlayerInput;
+
+        Vector2 input = new Vector2(Input.GetAxisRaw(m_PlayerInput.horizontal), Input.GetAxisRaw(m_PlayerInput.vertical));
+        Vector2 inputDir = input.normalized;
         Move(inputDir);
 
-        if (Input.GetKeyDown(KeyCode.Space)) {
+
+        if (Input.GetButtonDown(m_PlayerInput.jump)) {
             Jump();
         }
 

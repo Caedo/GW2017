@@ -37,6 +37,8 @@ public class Block : Item {
 
         m_AttachedAnchor = anchor;
 
+        anchor.SetHelperVisibility(false);
+
         GetComponent<Collider>().enabled = true;
 
         anchor.HasBlock = true;

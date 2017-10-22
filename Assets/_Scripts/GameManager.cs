@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour {
 
     GameSettings m_GameSettings;
 
-    private void Start() {
+    private void Awake() {
         m_GameSettings = GameSettings.SelectedGameSettings == null ? m_DefaultGameSettings : GameSettings.SelectedGameSettings;
 
         for (int i = 0; i < m_GameSettings.PlayersCount; i++) {

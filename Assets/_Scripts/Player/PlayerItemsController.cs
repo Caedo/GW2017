@@ -18,11 +18,19 @@ public class PlayerItemsController : MonoBehaviour {
     Item m_ClosestItem;
     Anchor m_ClosestAnchor;
 
+    public PlayerInput m_PlayerInput;
+
+
     Item m_PickedItem;
     bool m_HasItem {
         get {
             return m_PickedItem != null;
         }
+    }
+
+    private void Start() {
+        m_PlayerInput = GetComponent<Player>().m_PlayerInput;
+
     }
 
     private void Update() {
@@ -33,16 +41,16 @@ public class PlayerItemsController : MonoBehaviour {
             if (m_PickedItem.m_IsPlaceable) {
                 FindClosestAnchor();
 
-                if (Input.GetKeyDown(KeyCode.E)) {
+                if (Input.GetButtonDown(m_PlayerInput.itemUse)) {
                     PlaceItem();
                 }
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.E)) {
+        if (Input.GetButtonDown(m_PlayerInput.itemUse)) {
             PickUpItem();
         }
-        if (Input.GetKeyDown(KeyCode.F)) {
+        if (Input.GetButtonDown(m_PlayerInput.itemThrow)) {
             if (OnItemThrow != null)
                 OnItemThrow(m_PickedItem);
 
