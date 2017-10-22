@@ -9,6 +9,7 @@ public class PlayerItemsController : MonoBehaviour {
     public LayerMask m_ItemsMask;
     public LayerMask m_AnchorMask;
     public float m_PickUpRadius;
+    public float m_MinPickuUpRadius;
     public float m_ThrowForce;
 
     public Transform m_PickUpHolder;
@@ -82,18 +83,28 @@ public class PlayerItemsController : MonoBehaviour {
         }
 
         m_ClosestAnchor = null;
-        Collider[] anchors = Physics.OverlapSphere(transform.position, m_PickUpRadius, m_AnchorMask);
+        //Collider[] anchors = Physics.OverlapSphere(transform.position + transform.forward * 2, m_PickUpRadius/2, m_AnchorMask);
 
-        float minDst = float.MaxValue;
-        foreach (var anchor in anchors) {
-            float sqrDist = Vector3.SqrMagnitude(transform.position - anchor.transform.position);
+        //float minDst = float.MaxValue;
+        //foreach (var anchor in anchors) {
+        //    float sqrDist = Vector3.SqrMagnitude(transform.position - anchor.transform.position);
 
-            if (sqrDist < minDst) {
-                Anchor actualAnchor = anchor.GetComponent<Anchor>();
-                if (actualAnchor.m_IsAvaible && actualAnchor.player == m_Player.m_PlayerType) {
-                    minDst = sqrDist;
-                    m_ClosestAnchor = actualAnchor;
-                }
+        //    if (sqrDist < minDst && sqrDist > m_MinPickuUpRadius * m_MinPickuUpRadius) {
+        //        Anchor actualAnchor = anchor.GetComponent<Anchor>();
+        //        if (actualAnchor.m_IsAvaible && actualAnchor.player == m_Player.m_PlayerType) {
+        //            minDst = sqrDist;
+        //            m_ClosestAnchor = actualAnchor;
+        //        }
+        //    }
+        //}
+
+        RaycastHit hit;
+        Debug.DrawRay(transform.position + Vector3.up / 2, transform.forward * m_MinPickuUpRadius, Color.red);
+
+        if (Physics.Raycast(transform.position + Vector3.up /2 ,transform.forward, out hit, m_PickUpRadius, m_AnchorMask)) {
+            Anchor anchor = hit.collider.GetComponent<Anchor>();
+            if (anchor && anchor.m_IsAvaible) {
+                m_ClosestAnchor = anchor;
             }
         }
 
